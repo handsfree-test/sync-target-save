@@ -38,5 +38,6 @@ jobs:
       - name: trident-sync
         run: |
           pwd
+          ls
           trident sync
 
