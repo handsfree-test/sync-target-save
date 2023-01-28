@@ -35,19 +35,17 @@ jobs:
       - name: checkout work repo
         run: |
           git clone https://gitee.com/handsfree-test/sync-work-repo
-          ls
+          pwd
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
         with:
           python-version: "3.10"
       - name: Install dependencies
         run: |
-          cd ./sync-work-repo
           python -m pip install --upgrade pip
           pip install trident-sync
       - name: trident-sync
         run: |
-          cd ./sync-work-repo
           pwd
           trident sync
 
