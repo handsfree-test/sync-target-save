@@ -18,28 +18,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-      name: checkout
-      with:
-        # Repository name with owner. For example, actions/checkout
-        # Default: ${{ github.repository }}
-        repository: 'https://gitee.com/handsfree-test/sync-work-repo'
-        ref: 'main'
-        token: '${{secrets.GITEE_TOKEN}}'
-    - name: set git user
-      run: |
-        git --version
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<xiaojunnuo@qq.com>"
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install trident-sync
-    - name: trident-sync
-      run: |
-        trident sync
+      - uses: actions/checkout@v3
+        name: checkout
+        with:
+          # Repository name with owner. For example, actions/checkout
+          # Default: ${{ github.repository }}
+          repository: 'handsfree-test/sync-work-repo'
+          ref: 'main'
+          token: '${{secrets.GITEE_TOKEN}}'
+          'github-server-url': https://gitee.com/
+      - name: set git user
+        run: |
+          git --version
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<xiaojunnuo@qq.com>"
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install trident-sync
+      - name: trident-sync
+        run: |
+          trident sync
 
