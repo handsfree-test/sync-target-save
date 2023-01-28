@@ -26,6 +26,9 @@ jobs:
       #          ref: 'main'
       #          token: '${{secrets.GITEE_TOKEN}}'
       #          'github-server-url': https://gitee.com/
+      - uses: de-vri-es/setup-git-credentials@v2
+        with:
+          credentials: ${{secrets.GITEE_TOKEN}}
       - name: set git user
         run: |
           git --version
