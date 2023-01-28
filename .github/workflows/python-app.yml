@@ -32,7 +32,6 @@ jobs:
           credentials: ${{secrets.GITEE_TOKEN}}
       - name: set git user
         run: |
-          git --version
           git config user.name "GitHub Actions Bot"
           git config user.email "<xiaojunnuo@qq.com>"
       - name: checkout work repo
