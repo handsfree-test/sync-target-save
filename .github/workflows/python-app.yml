@@ -35,6 +35,7 @@ jobs:
       - name: checkout work repo
         run: |
           git clone https://gitee.com/handsfree-test/sync-work-repo
+          cd ./sync-work-repo
           pwd
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
