@@ -18,11 +18,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: set git user
-        run: |
-          git --version
-          git config user.name "greper"
-          git config user.email "<xiaojunnuo@qq.com>"
       - uses: actions/checkout@v3
         name: checkout
         with:
@@ -32,6 +27,11 @@ jobs:
           ref: 'main'
           token: '${{secrets.GITEE_TOKEN}}'
           'github-server-url': https://gitee.com/
+        run: |
+          git --version
+          git config user.name "greper"
+          git config user.email "<xiaojunnuo@qq.com>"
+
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
         with:
