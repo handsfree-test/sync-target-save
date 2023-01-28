@@ -18,7 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         name: checkout this
-        working-directory: ./tmp
+        with:
+          path: tmp
       #        with:
       #          # Repository name with owner. For example, actions/checkout
       #          # Default: ${{ github.repository }}
@@ -35,8 +36,8 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<xiaojunnuo@qq.com>"
       - name: checkout work repo
-        working-directory: ./work
         run: |
+          mkdir ./work
           git clone https://gitee.com/handsfree-test/sync-work-repo
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
@@ -44,9 +45,11 @@ jobs:
           python-version: "3.10"
       - name: Install dependencies
         run: |
+          cd ./work/sync-work-repo
           python -m pip install --upgrade pip
           pip install trident-sync
       - name: trident-sync
         run: |
+          cd ./work/sync-work-repo
           trident sync
 
