@@ -18,8 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         name: checkout this
-        with:
-          path: tmp
       #        with:
       #          # Repository name with owner. For example, actions/checkout
       #          # Default: ${{ github.repository }}
