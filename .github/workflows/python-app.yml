@@ -48,5 +48,6 @@ jobs:
       - name: trident-sync
         run: |
           cd ./sync-work-repo
+          pwd
           trident sync
 
