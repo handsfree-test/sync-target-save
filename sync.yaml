@@ -11,6 +11,7 @@ repo:
     type: github                       # 仓库类型，用于提交PR，可选项：[github/gitee/gitea/gitlab]
     auto_merge: true
 
+
 sync: # 同步配置，可以配置多个同步任务
   task1: # 同步任务1，可以任意命名
     src: # 源仓库
