@@ -24,12 +24,10 @@ jobs:
           git config user.email "<xiaojunnuo@qq.com>"
       - name: checkout work repo
         run: |
-          pwd
-          ls
+          cd ..
+          rm ./sync-work-repo -rf
           git clone https://gitee.com/handsfree-test/sync-work-repo
           cd ./sync-work-repo
-          pwd
-          ls
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
         with:
@@ -40,10 +38,5 @@ jobs:
           pip install trident-sync
       - name: trident-sync
         run: |
-          pwd
-          ls
-          cd ./sync-work-repo
-          pwd
-          ls
           trident sync
 
