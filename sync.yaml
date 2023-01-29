@@ -1,6 +1,6 @@
 repo:
   sync-src: # 上游项目1，可以任意命名
-    url: "https://gitee.com/handsfree-test/sync-src"      # 仓库地址
+    url: "https://github.com/handsfree-test/sync-src"      # 仓库地址
     path: "sync-src"                  # submodule保存路径
     branch: "main"                    # 要同步过来的分支
   target: # 你的项目（接受同步项目），可以任意命名
@@ -8,7 +8,7 @@ repo:
     path: "target"                    # submodule子路径
     branch: "main"                    # 你的代码开发主分支（接受合并的分支）例如dev、main等
     token: ""                         # 仓库token，用于提交PR, 前往 https://github.com/settings/tokens 创建token
-    type: github                       # 仓库类型，用于提交PR，可选项：[github/gitee/gitea/gitlab]
+    type: github                      # 仓库类型，用于提交PR，可选项：[github/gitee/gitea/gitlab]
     auto_merge: true
 
 
@@ -28,7 +28,7 @@ sync: # 同步配置，可以配置多个同步任务
         global random
         print( random.randint(0,9))
       f()
-      logger.warning('custom copy script')
+      logger.warning('custom copy script test')
       shutil.copytree(src_dir, target_dir)
 
 options: #选项
