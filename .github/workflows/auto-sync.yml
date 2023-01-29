@@ -18,7 +18,7 @@ jobs:
       - name: Set git token
         uses: de-vri-es/setup-git-credentials@v2
         with:
-          credentials: ${{secrets.credentials_github}}
+          credentials: https://${{secrets.credentials_github}}@github.com
       - name: Set git user
         run: |
           git config user.name "GitHub Actions Bot"
@@ -34,5 +34,6 @@ jobs:
       - name: Trident sync execute
         run: |
           trident init
+          trident remote --url=https://github.com/handsfree-test/sync-work-repo
           trident sync
 
